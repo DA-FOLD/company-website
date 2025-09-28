@@ -1,45 +1,172 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-.logo.cloudflare:hover {
-  filter: drop-shadow(0 0 2em #f6821faa);
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.section:last-child {
+  border-bottom: none;
+}
+
+.hero-section h1 {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin: 0;
+  animation: fadeIn 1s ease-in-out, pixelate-in 1s ease-in-out;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  opacity: 0.9;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.cta-button {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  background-size: 200% 100%;
+  color: white;
+  transition: background-position 0.5s ease;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button:hover {
+  background-position: 100% 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.mission-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.mission-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.mission-visual {
+  flex: 1;
+  height: 300px;
+  border: 1px solid var(--gradient-mid);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Placeholder for the unfolding animation */
+  background-color: rgba(29, 94, 140, 0.1);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.solution-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gradient-mid);
+}
+
+.solution-card h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--gradient-end);
+}
+
+.solution-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--gradient-mid);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pixelate-in {
+  0% {
+    filter: blur(20px);
+    transform: scale(1.2);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    filter: blur(10px);
+    transform: scale(1.05);
+    opacity: 0.5;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
