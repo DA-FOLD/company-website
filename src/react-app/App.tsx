@@ -21,6 +21,7 @@ function App() {
             <div className="mission-visual">
               {/* This div is a placeholder for the unfolding animation visual */}
               <p style={{ opacity: 0.5 }}>[Visual Metaphor: Unfolding Complexity]</p>
+              <img src={"assets/logo.jpg"} alt={"logo"}/>
             </div>
           </div>
         </section>
