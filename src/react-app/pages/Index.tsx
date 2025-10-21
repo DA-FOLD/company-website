@@ -25,7 +25,7 @@ const Index = () => {
                 <a href="#hero" className="nav-logo">DA FØLD</a>
                 <ul className="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#why-choose">Link 2</a></li>
+                    <li><a href="#why-choose">Why Choose Us</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
