@@ -30,7 +30,7 @@ const Index = () => {
         // If everything is valid
         console.log({ name, email, projectType, details });
 
-        fetch("http://www.dafold.com/api/send-message", {
+        fetch("http://dafold.com/api/send-message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
