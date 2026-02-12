@@ -584,4 +584,11 @@ body {
     .contact-title {
         font-size: 2rem;
     }
+
+    .form-input.invalid,
+    .form-textarea.invalid {
+        border: 2px solid #e63946;
+        background-color: #fff5f5;
+    }
+
 }

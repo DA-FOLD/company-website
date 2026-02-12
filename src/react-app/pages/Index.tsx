@@ -4,6 +4,58 @@ import logoIsometric from "@/assets/logo.jpg";
 import "../styles/main.css";
 
 const Index = () => {
+
+    const handleButtonClick = (e:React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+
+        const name = (document.getElementById("name") as HTMLInputElement).value.trim();
+        const email = (document.getElementById("email") as HTMLInputElement).value.trim();
+        const projectType = (document.getElementById("projectType") as HTMLInputElement).value.trim();
+        const details = (document.getElementById("projectdetail") as HTMLTextAreaElement).value.trim()
+
+        // Basic validation
+        if (!name || !email || !projectType || !details) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Simple email check
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+        }
+
+        // If everything is valid
+        console.log({ name, email, projectType, details });
+
+        fetch("http://localhost:5173/api/send-message", { // make sure the URL matches your backend
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name,
+                email,
+                projectType,
+                details
+            })
+        })
+            .then(async (res) => {
+                const data = await res.json();
+                if (res.ok) {
+                    alert(data.message); // show success
+                } else {
+                    alert("Error: " + data.message);
+                    console.log(data.error);
+                }
+            })
+            .catch((err) => {
+                console.error("Network error:", err);
+                alert("Network error occurred");
+            });
+
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const nav = document.querySelector('.nav');
@@ -159,6 +211,7 @@ const Index = () => {
                                         <input
                                             type="text"
                                             className="form-input"
+                                            id="name"
                                             placeholder="John Smith"
                                         />
                                     </div>
@@ -167,6 +220,7 @@ const Index = () => {
                                         <input
                                             type="email"
                                             className="form-input"
+                                            id="email"
                                             placeholder="john@example.com"
                                         />
                                     </div>
@@ -176,6 +230,7 @@ const Index = () => {
                                     <input
                                         type="text"
                                         className="form-input"
+                                        id="projectType"
                                         placeholder="e.g., Workflow automation, Custom database, Mobile app"
                                     />
                                 </div>
@@ -183,10 +238,11 @@ const Index = () => {
                                     <label className="form-label">Tell Us About Your Needs</label>
                                     <textarea
                                         className="form-textarea"
+                                        id="projectdetail"
                                         placeholder="Describe your current process challenges and what you'd like to achieve..."
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="form-submit">
+                                <button type="submit" className="form-submit" onClick={handleButtonClick}>
                                     Send Message →
                                 </button>
                             </form>
