@@ -10,6 +10,13 @@ colors:
   crease: "#D9D6CC"
   ink-muted: "#4A5A60"
   paper-on-ink: "#F4F2EC"
+  ink-text-muted: "#B9C7CB"
+  ink-line: "#3C5A64"
+  ink-line-hover: "#6F8A92"
+  ink-placeholder: "#7F969D"
+  ink-error: "#F0B4A0"
+  ink-foot-text: "#8FA5AB"
+  ink-foot-line: "#16404D"
 typography:
   display:
     fontFamily: "Instrument Serif, Georgia, serif"
@@ -30,11 +37,11 @@ typography:
     lineHeight: 1.6
     letterSpacing: "0em"
   label:
-    fontFamily: "JetBrains Mono, ui-monospace, monospace"
-    fontSize: "0.75rem"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
+    fontSize: "0.875rem"
     fontWeight: 500
     lineHeight: 1.4
-    letterSpacing: "0.08em"
+    letterSpacing: "0.02em"
 rounded:
   none: "0px"
   hairline: "2px"
@@ -120,13 +127,13 @@ Provisional until the brand typography rule is supplied.
 
 - **Display and headings:** *Instrument Serif*, weight 400. A printed-document voice. Large, tight and calm.
 - **Body:** *Instrument Sans*. Plain, readable and modern, and it pairs with the serif by design.
-- **Labels, panel numbers and form labels:** *JetBrains Mono* in uppercase, tracked +0.08em. This links the site to the DA FØLD CRM, which already uses it.
+- **Labels, buttons and form labels:** *Instrument Sans* 500, tracked +0.02em. There is no monospace on the marketing site, because mono there would be a costume. JetBrains Mono stays in the CRM.
 
 ### Hierarchy
 1. Display: one per panel at most. The panel's single claim.
 2. Heading: supporting statements inside a panel.
 3. Body: 60 to 70 characters per line at most.
-4. Label: panel numbers (`01 / 05`), section names and the call to action.
+4. Label: buttons, form labels and navigation.
 
 ### Named Rules
 - **One Display Rule.** One display line per panel. If a panel needs two, it is two panels.
@@ -137,7 +144,7 @@ Provisional until the brand typography rule is supplied.
 - The page is a vertical sequence of **panels**, each at least one viewport tall on desktop. Panel padding uses `spacing.panel`.
 - Five panels make the first sheet: **01 Cover** (the problem and the primary action), **02 What we do** (software engineering and consulting), **03 How we work**, **04 Who's behind it** (anonymous, with the founders' engineering background) and **05 Back of the sheet** (the contact form, on `fold-ink`).
 - Content sits on a 12-column grid with generous left alignment. Text never centers across the full width.
-- A panel number in the label style sits in the top-left corner of every panel, like a page mark on a folded brochure.
+- Each crease carries printer's fold marks: short 14px ticks at both page edges. There are no panel numbers. The only numerals are the four steps of "How a project unfolds", where the order matters.
 - Breakpoints: 640px, 960px and 1280px. Below 960px the fold animation turns off, and panels stack flat, separated by drawn creases.
 
 ## Elevation & Depth
@@ -154,12 +161,12 @@ Square corners throughout (`rounded.none`). It's paper, and it is cut, not molde
 ## Components
 
 ### Buttons
-- **Primary:** square, `fold-teal` with paper-colored text, mono uppercase label. On hover it darkens to `fold-ink`, and an arrow nudges 4px.
+- **Primary:** square, `fold-teal` with paper-colored text, in a sentence-case label. On hover it darkens to `fold-ink`, and an arrow nudges 4px.
 - **On ink:** on the back panel the primary button becomes `fold-teal-light` with `fold-ink` text.
 - Every page has one primary action: **Book a conversation**.
 
 ### Inputs / Fields
-- Fields look like a form printed on the sheet: no box, a 1px `crease` underline, and a mono label above. On focus the underline turns `fold-teal` at 2px. Errors are written as plain sentences beneath the field, never as a red box.
+- Fields look like a form printed on the back of the sheet: no box, a 1px `ink-line` underline, and a label above. On focus the underline turns `fold-teal-light` at 2px. Errors are set in `ink-error`. Errors are written as plain sentences beneath the field, never as a red box.
 
 ### Navigation
 - A thin top bar on paper: the logo mark, the **DA FØLD** wordmark, panel labels as anchor links, and **Book a conversation** at the far right. On scroll the bar stays put and gains a 1px crease line. There is no transparent hero bar over imagery.

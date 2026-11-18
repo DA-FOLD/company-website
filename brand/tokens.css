@@ -8,9 +8,17 @@
   --crease: #d9d6cc;
   --ink-muted: #4a5a60;
 
+  /* on the back of the sheet (--fold-ink ground) */
+  --ink-text-muted: #b9c7cb;
+  --ink-line: #3c5a64;
+  --ink-line-hover: #6f8a92;
+  --ink-placeholder: #7f969d;
+  --ink-error: #f0b4a0;
+  --ink-foot-text: #8fa5ab;
+  --ink-foot-line: #16404d;
+
   --font-display: "Instrument Serif", Georgia, serif;
   --font-body: "Instrument Sans", system-ui, sans-serif;
-  --font-label: "JetBrains Mono", ui-monospace, monospace;
 
   --space-xs: 4px;
   --space-sm: 8px;

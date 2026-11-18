@@ -1,0 +1,37 @@
+<script lang="ts">
+	let { id = 'mark', class: className = '', title = '' }: { id?: string; class?: string; title?: string } =
+		$props();
+</script>
+
+<svg
+	class={className}
+	viewBox="0 0 347 467"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	role={title ? 'img' : undefined}
+	aria-hidden={title ? undefined : 'true'}
+	aria-label={title || undefined}
+>
+	<path
+		d="M346.889 68.125V109.375C347.684 124.997 343.406 135.646 330.014 140.625L177.514 202.5V248.75L314.389 195V240.352C314.527 250.234 309.043 255.743 296.889 261.25L177.514 311.25L177.264 466.875C74.8952 400.399 -1.18884 326.983 0.0141602 282.5V76.25L177.514 0L346.889 68.125ZM44.3892 108.75V275C45.9952 308.306 76.9502 337.527 126.264 366.25V166.25L285.014 97.5L177.514 54.375L44.3892 108.75Z"
+		fill="url(#{id}-a)"
+	/>
+	<path
+		fill-rule="evenodd"
+		clip-rule="evenodd"
+		d="M283.639 96.875L346.981 67.042L178.764 0.375V54.875L283.639 96.875Z"
+		fill="url(#{id}-b)"
+		fill-opacity="0.69"
+		style="mix-blend-mode:multiply"
+	/>
+	<defs>
+		<linearGradient id="{id}-a" x1="299.138" y1="44.375" x2="42.1382" y2="348.375" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#34A7AC" />
+			<stop offset="1" stop-color="#137395" />
+		</linearGradient>
+		<linearGradient id="{id}-b" x1="200.639" y1="43.75" x2="312.639" y2="85.75" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#137395" stop-opacity="0" />
+			<stop offset="1" stop-color="#06242F" />
+		</linearGradient>
+	</defs>
+</svg>
