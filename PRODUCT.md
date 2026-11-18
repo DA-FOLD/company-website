@@ -45,7 +45,7 @@ The existing site copy leans on "unify your operations" and "enterprise excellen
 - Name: **DA FØLD**, always with the Ø.
 - A brand manual exists (PDF, kept off-repo) but the founders consider it poorly executed. Treat it as a source for **color hex codes only**, not as a binding visual direction.
 - The palette from the manual should live in code as design tokens. Colors currently in code are navy `#1A2F3A`, teal `#54D6C4` and off-white `#f3f5f2`. **Check these against the manual before treating them as final.**
-- Logo: only raster files are in this repo (`public/logo.png`, `src/react-app/assets/logo.jpg`). An SVG may exist in the DA FØLD CRM repository, which is not yet accessible.
+- Logo: the master vector is `brand/dafold-logo.svg`, copied from the DA-FOLD/crm repo. It's a shield/fold mark with a teal gradient running from `#34A7AC` to `#137395`, and a `#06242F` shade on the fold. These logo colors are authoritative brand colors, and the site palette should agree with them. The site's current teal `#54D6C4` and navy `#1A2F3A` do not match the logo exactly.
 - A typography rule exists in the brand materials but has not yet been provided.
 
 ## Evidence on Hand
