@@ -1,0 +1,78 @@
+@import '../brand/tokens.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 72px;
+	scrollbar-color: var(--fold-teal) var(--paper-shade);
+	-webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	background: var(--paper);
+	color: var(--fold-ink);
+	font-family: var(--font-body);
+	font-size: 1.0625rem;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	caret-color: var(--fold-teal);
+	overflow-x: clip;
+}
+
+::selection {
+	background: var(--fold-teal);
+	color: var(--paper);
+}
+
+a {
+	color: inherit;
+	text-underline-offset: 0.22em;
+	text-decoration-thickness: 1px;
+}
+
+:focus-visible {
+	outline: 2px solid var(--fold-teal);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 400;
+	text-wrap: balance;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
